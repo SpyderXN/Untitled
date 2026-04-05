@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://ogywpdv2og2t"]
+
+[ext_resource type="Script" uid="uid://bjx30wdsnv8v8" path="res://Destruction Meter/destruction_meter.gd" id="1_1pkwo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mj4rh"]
+font_size = 50
+
+[node name="Destruction Meter" type="Control" unique_id=2117679596]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_1pkwo")
+
+[node name="Label" type="Label" parent="." unique_id=1660233978]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "0"
+label_settings = SubResource("LabelSettings_mj4rh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Damagebar" type="ProgressBar" parent="." unique_id=1952149782]
+layout_mode = 0
+offset_right = 249.0
+offset_bottom = 27.0
+rounded = true

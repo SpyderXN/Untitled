@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dd18pn5rd5f2d"]
+
+[ext_resource type="Script" uid="uid://cji1nqx6i0dk0" path="res://Car Spawner/car_spawner.gd" id="1_7w2g3"]
+[ext_resource type="PackedScene" uid="uid://b5a0ks7volpx8" path="res://Car/car.tscn" id="2_lissh"]
+
+[node name="Car Spawner" type="Node2D" unique_id=504182718]
+script = ExtResource("1_7w2g3")
+car = ExtResource("2_lissh")
+
+[node name="Spawntimer" type="Timer" parent="." unique_id=93442707]
+wait_time = 2.0
+
+[node name="Spawns" type="Node2D" parent="." unique_id=1578843556]
+
+[connection signal="timeout" from="Spawntimer" to="." method="_on_spawntimer_timeout"]

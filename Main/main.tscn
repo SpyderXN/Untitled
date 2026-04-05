@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cxsy0p707iwjn"]
+
+[ext_resource type="PackedScene" uid="uid://ogywpdv2og2t" path="res://Destruction Meter/destruction_meter.tscn" id="1_eunhr"]
+[ext_resource type="Script" uid="uid://cylt4ji32qpro" path="res://Main/main.gd" id="1_liyct"]
+[ext_resource type="PackedScene" uid="uid://dhbr65q7x0ww3" path="res://Player/player.tscn" id="1_yh5la"]
+[ext_resource type="PackedScene" uid="uid://drribvw8xgxu3" path="res://HighScorePanel/high_score.tscn" id="2_k3v36"]
+[ext_resource type="PackedScene" uid="uid://cbubwu5pbjt5p" path="res://Spawner-1/spawner_1.tscn" id="3_eunhr"]
+[ext_resource type="PackedScene" uid="uid://b3cvqioejsnnf" path="res://Spawner-2/spawner_2.tscn" id="4_k3v36"]
+[ext_resource type="PackedScene" uid="uid://b5vibwkrbkkhf" path="res://Finish Line/finish_line.tscn" id="7_ib3t1"]
+
+[node name="Main" type="Node2D" unique_id=847818163]
+script = ExtResource("1_liyct")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=281260480]
+
+[node name="Destruction Meter" parent="UI" unique_id=2117679596 instance=ExtResource("1_eunhr")]
+
+[node name="HighScore" parent="UI" unique_id=411001965 instance=ExtResource("2_k3v36")]
+visible = false
+
+[node name="Spawner-1" parent="." unique_id=2104969715 instance=ExtResource("3_eunhr")]
+position = Vector2(0, 536)
+
+[node name="Spawner-2" parent="." unique_id=1035367092 instance=ExtResource("4_k3v36")]
+position = Vector2(0, 424)
+
+[node name="Player" parent="." unique_id=652778348 instance=ExtResource("1_yh5la")]
+position = Vector2(416, 608)
+tile_size = 32
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1583165716]
+zoom = Vector2(1.475, 1.475)
+limit_left = 100
+limit_right = 750
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+
+[node name="FinishLine" parent="." unique_id=12964170 instance=ExtResource("7_ib3t1")]
+position = Vector2(0, 557)
+
+[connection signal="player_entered" from="FinishLine" to="." method="_on_finish_line_player_entered"]
