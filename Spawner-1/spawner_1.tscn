@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dd18pn5rd5f2d" path="res://Car Spawner/car_spawner.tscn" id="1_q4hmi"]
 [ext_resource type="Texture2D" uid="uid://cydghfaloumlj" path="res://Assets/Temp_Road.png" id="2_qtb1u"]
+[ext_resource type="PackedScene" uid="uid://bsyndxobjd5vu" path="res://YellowCar/yellow_car.tscn" id="3_yap1v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yap1v"]
 texture = ExtResource("2_qtb1u")
@@ -26,3 +27,4 @@ tile_set = SubResource("TileSet_wq7kb")
 [node name="Car Spawner" parent="." unique_id=504182718 instance=ExtResource("1_q4hmi")]
 position = Vector2(768, 0)
 rotation = -3.1415927
+car = ExtResource("3_yap1v")

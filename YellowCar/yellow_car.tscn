@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bsyndxobjd5vu"]
+
+[ext_resource type="PackedScene" uid="uid://b5a0ks7volpx8" path="res://Car/car.tscn" id="1_y5epp"]
+[ext_resource type="Texture2D" uid="uid://lnlt0a5qt7fn" path="res://Assets/Yellow_car.png" id="2_tmq38"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sd12l"]
+size = Vector2(34, 20)
+
+[node name="YellowCar" unique_id=1056331510 instance=ExtResource("1_y5epp")]
+speed = 250
+points = 1
+
+[node name="Sprite2D" parent="." index="0" unique_id=1453901874]
+texture = ExtResource("2_tmq38")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1924795177]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_sd12l")

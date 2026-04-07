@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c6dvvcantb1h2"]
+
+[ext_resource type="PackedScene" uid="uid://b5a0ks7volpx8" path="res://Car/car.tscn" id="1_d3b6d"]
+[ext_resource type="Texture2D" uid="uid://dgru3psi04ta1" path="res://Assets/Green_car.png" id="2_umuyp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7r3m"]
+size = Vector2(34, 20)
+
+[node name="GreenCar" unique_id=1056331510 instance=ExtResource("1_d3b6d")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1453901874]
+texture = ExtResource("2_umuyp")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1924795177]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_s7r3m")

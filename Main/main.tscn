@@ -36,6 +36,6 @@ position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 
 [node name="FinishLine" parent="." unique_id=12964170 instance=ExtResource("7_ib3t1")]
-position = Vector2(0, 557)
+position = Vector2(0, 759)
 
 [connection signal="player_entered" from="FinishLine" to="." method="_on_finish_line_player_entered"]
