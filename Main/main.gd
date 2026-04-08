@@ -10,6 +10,8 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if destruction_meter.value == 100:
+		var tween = create_tween()
+		tween.tween_property(player, "moving", true, .05)
 		high_score.visible = true
 
 

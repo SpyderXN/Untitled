@@ -1,0 +1,35 @@
+[gd_scene format=4 uid="uid://brkg8gji22d5a"]
+
+[ext_resource type="Texture2D" uid="uid://cydghfaloumlj" path="res://Assets/Temp_Road.png" id="1_wxujs"]
+[ext_resource type="PackedScene" uid="uid://dd18pn5rd5f2d" path="res://Car Spawner/car_spawner.tscn" id="2_6k5o4"]
+[ext_resource type="PackedScene" uid="uid://bsyndxobjd5vu" path="res://YellowCar/yellow_car.tscn" id="3_k00ys"]
+[ext_resource type="PackedScene" uid="uid://c3qq4th0ep22v" path="res://Truck/truck.tscn" id="4_4xari"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yap1v"]
+texture = ExtResource("1_wxujs")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_wq7kb"]
+tile_size = Vector2i(32, 32)
+sources/1 = SubResource("TileSetAtlasSource_yap1v")
+
+[node name="Spawner-3" type="Node2D" unique_id=2104969715]
+metadata/_edit_horizontal_guides_ = [0.0]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=942182769]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAAAAP//AQAAAAAAAAAAAAAAAQAAAAEAAAABAP//AQABAAAAAAABAAAAAQABAAEAAAD+////AQAAAAAAAAD+/wAAAQAAAAEAAAD/////AQABAAAAAAD//wAAAQABAAEAAAACAP//AQAAAAAAAAACAAAAAQAAAAEAAAADAP//AQABAAAAAAADAAAAAQABAAEAAAAEAP//AQAAAAAAAAAEAAAAAQAAAAEAAAAFAP//AQABAAAAAAAFAAAAAQABAAEAAAAGAP//AQAAAAAAAAAGAAAAAQAAAAEAAAAHAP//AQABAAAAAAAHAAAAAQABAAEAAAAIAP//AQAAAAAAAAAIAAAAAQAAAAEAAAAJAP//AQABAAAAAAAJAAAAAQABAAEAAAAKAP//AQAAAAAAAAAKAAAAAQAAAAEAAAALAP//AQABAAAAAAALAAAAAQABAAEAAAAMAP//AQAAAAAAAAAMAAAAAQAAAAEAAAANAP//AQABAAAAAAANAAAAAQABAAEAAAAOAP//AQAAAAAAAAAOAAAAAQAAAAEAAAAPAP//AQABAAAAAAAPAAAAAQABAAEAAAAQAP//AQAAAAAAAAAQAAAAAQAAAAEAAAARAP//AQABAAAAAAARAAAAAQABAAEAAAASAP//AQAAAAAAAAASAAAAAQAAAAEAAAATAP//AQABAAAAAAATAAAAAQABAAEAAAAUAP//AQAAAAAAAAAUAAAAAQAAAAEAAAAVAP//AQABAAAAAAAVAAAAAQABAAEAAAAWAP//AQAAAAAAAAAWAAAAAQAAAAEAAAAXAP//AQABAAAAAAAXAAAAAQABAAEAAAAYAP//AQAAAAAAAAAYAAAAAQAAAAEAAAAZAP//AQABAAAAAAAZAAAAAQABAAEAAAA=")
+tile_set = SubResource("TileSet_wq7kb")
+
+[node name="Car Spawner" parent="." unique_id=504182718 instance=ExtResource("2_6k5o4")]
+position = Vector2(768, 16)
+rotation = -3.1415927
+car = ExtResource("3_k00ys")
+
+[node name="Car Spawner2" parent="." unique_id=1135019004 instance=ExtResource("2_6k5o4")]
+position = Vector2(0, -16)
+car = ExtResource("4_4xari")

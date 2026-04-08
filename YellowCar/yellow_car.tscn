@@ -7,7 +7,7 @@
 size = Vector2(34, 20)
 
 [node name="YellowCar" unique_id=1056331510 instance=ExtResource("1_y5epp")]
-speed = 250
+speed = 300
 points = 1
 
 [node name="Sprite2D" parent="." index="0" unique_id=1453901874]

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://7abqs53cfea5"]
+
+[ext_resource type="Texture2D" uid="uid://dqvkbusdfkdat" path="res://Assets/Footpath_lamp.png" id="1_bpcw3"]
+
+[sub_resource type="Gradient" id="Gradient_qmlv1"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.08757062, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kw60m"]
+gradient = SubResource("Gradient_qmlv1")
+width = 32
+height = 32
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.471831)
+fill_to = Vector2(0.05399061, 0.025821596)
+
+[node name="Lamp" type="Sprite2D" unique_id=65772391]
+texture_filter = 1
+texture = ExtResource("1_bpcw3")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1519176133]
+position = Vector2(4.7683716e-07, -16)
+scale = Vector2(1.6949152, 0.8474577)
+color = Color(0.81789327, 0.7667061, 3.85046e-07, 1)
+energy = 1.47
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 1.1
+texture = SubResource("GradientTexture2D_kw60m")
+texture_scale = 1.18
