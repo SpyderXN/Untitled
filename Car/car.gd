@@ -1,4 +1,5 @@
 extends Area2D
+class_name Car
 
 var dir = Vector2.RIGHT
 @export var speed = 100

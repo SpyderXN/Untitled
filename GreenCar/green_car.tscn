@@ -1,14 +1,122 @@
 [gd_scene format=3 uid="uid://c6dvvcantb1h2"]
 
 [ext_resource type="PackedScene" uid="uid://b5a0ks7volpx8" path="res://Car/car.tscn" id="1_d3b6d"]
+[ext_resource type="Script" uid="uid://sait0m0o2gjg" path="res://GreenCar/green_car.gd" id="2_s7r3m"]
 [ext_resource type="Texture2D" uid="uid://dgru3psi04ta1" path="res://Assets/Green_car.png" id="2_umuyp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7r3m"]
 size = Vector2(34, 20)
 
+[sub_resource type="Gradient" id="Gradient_umuyp"]
+offsets = PackedFloat32Array(0.7406015, 0.92105263)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_umuyp"]
+gradient = SubResource("Gradient_umuyp")
+width = 10
+height = 16
+fill = 1
+fill_from = Vector2(0.60991454, 0.53846157)
+fill_to = Vector2(0.06837607, 0.5726496)
+
+[sub_resource type="Gradient" id="Gradient_s7r3m"]
+offsets = PackedFloat32Array(0.24436091, 0.7781955)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s7r3m"]
+gradient = SubResource("Gradient_s7r3m")
+fill_from = Vector2(0, 0.0070422534)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3b6d"]
+size = Vector2(126, 20)
+
+[sub_resource type="Animation" id="Animation_umuyp"]
+resource_name = "Blink"
+length = 1.5333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Backlight:enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.8333333, 1.1333333, 1.3666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Headlight 1:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.22, 0.43333334, 0.6533334, 0.8666667, 1.0866668, 1.3666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Headlight 2:enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.22, 0.43333334, 0.6533333, 0.8666667, 1.0866666, 1.3533334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_s7r3m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Backlight:enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Headlight 1:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Headlight 2:enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cj36g"]
+_data = {
+&"Blink": SubResource("Animation_umuyp"),
+&"RESET": SubResource("Animation_s7r3m")
+}
+
 [node name="GreenCar" unique_id=1056331510 instance=ExtResource("1_d3b6d")]
-speed = 150
-points = 1
+script = ExtResource("2_s7r3m")
 
 [node name="Sprite2D" parent="." index="0" unique_id=1453901874]
 texture = ExtResource("2_umuyp")
@@ -16,3 +124,33 @@ texture = ExtResource("2_umuyp")
 [node name="CollisionShape2D" parent="." index="1" unique_id=1924795177]
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_s7r3m")
+
+[node name="Headlight 1" type="PointLight2D" parent="." index="2" unique_id=1252698118]
+position = Vector2(24.499998, -5.999999)
+scale = Vector2(3.3000002, 0.75)
+color = Color(0.99534124, 0.98117155, 0, 1)
+texture = SubResource("GradientTexture2D_umuyp")
+
+[node name="Headlight 2" type="PointLight2D" parent="." index="3" unique_id=1106514269]
+position = Vector2(24.499998, 5)
+scale = Vector2(3.3000002, 0.75)
+color = Color(0.99534124, 0.98117155, 0, 1)
+texture = SubResource("GradientTexture2D_umuyp")
+
+[node name="Backlight" type="PointLight2D" parent="." index="4" unique_id=35210948]
+position = Vector2(-16.5, 0)
+scale = Vector2(0.078124985, 0.15625001)
+color = Color(0.9411765, 0.22745098, 0.28627452, 1)
+energy = 1.42
+texture = SubResource("GradientTexture2D_s7r3m")
+
+[node name="Area2D" type="Area2D" parent="." index="5" unique_id=696598718]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0" unique_id=770661008]
+position = Vector2(77, 0)
+shape = SubResource("RectangleShape2D_d3b6d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="6" unique_id=1331396863]
+libraries/ = SubResource("AnimationLibrary_cj36g")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

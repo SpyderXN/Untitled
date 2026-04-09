@@ -16,8 +16,14 @@ fill = 1
 fill_from = Vector2(0.5, 0.471831)
 fill_to = Vector2(0.05399061, 0.025821596)
 
-[node name="Lamp" type="Sprite2D" unique_id=65772391]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpcw3"]
+size = Vector2(8, 17)
+
+[node name="Lamp" type="StaticBody2D" unique_id=1620048495]
 texture_filter = 1
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=504534987]
 texture = ExtResource("1_bpcw3")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1519176133]
@@ -30,3 +36,7 @@ shadow_filter = 2
 shadow_filter_smooth = 1.1
 texture = SubResource("GradientTexture2D_kw60m")
 texture_scale = 1.18
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1048805316]
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_bpcw3")

@@ -1,13 +1,29 @@
 [gd_scene format=3 uid="uid://c3qq4th0ep22v"]
 
 [ext_resource type="PackedScene" uid="uid://b5a0ks7volpx8" path="res://Car/car.tscn" id="1_vfagg"]
+[ext_resource type="Script" uid="uid://brxoqu740r7lx" path="res://Truck/truck.gd" id="2_clrb3"]
 [ext_resource type="Texture2D" uid="uid://nijk068236go" path="res://Assets/Truck.png" id="2_y4sod"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clrb3"]
 size = Vector2(53, 26)
 
+[sub_resource type="Gradient" id="Gradient_d3b6d"]
+offsets = PackedFloat32Array(0.7406015, 0.92105263)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vfagg"]
+gradient = SubResource("Gradient_d3b6d")
+width = 10
+height = 16
+fill = 1
+fill_from = Vector2(0.60991454, 0.53846157)
+fill_to = Vector2(0.06837607, 0.5726496)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vfagg"]
+size = Vector2(111, 26)
+
 [node name="Truck" unique_id=1056331510 instance=ExtResource("1_vfagg")]
-points = 2
+script = ExtResource("2_clrb3")
 
 [node name="Sprite2D" parent="." index="0" unique_id=1453901874]
 texture = ExtResource("2_y4sod")
@@ -15,3 +31,23 @@ texture = ExtResource("2_y4sod")
 [node name="CollisionShape2D" parent="." index="1" unique_id=1924795177]
 position = Vector2(-2.5, 0)
 shape = SubResource("RectangleShape2D_clrb3")
+
+[node name="Headlight 1" type="PointLight2D" parent="." index="2" unique_id=49148023]
+position = Vector2(33.5, -5.999998)
+scale = Vector2(3.3000002, 0.75)
+color = Color(0.99534124, 0.98117155, 0, 1)
+texture = SubResource("GradientTexture2D_vfagg")
+
+[node name="Headlight 2" type="PointLight2D" parent="." index="3" unique_id=706734311]
+position = Vector2(33.5, 5)
+scale = Vector2(3.3000002, 0.75)
+color = Color(0.99534124, 0.98117155, 0, 1)
+texture = SubResource("GradientTexture2D_vfagg")
+
+[node name="Area2D" type="Area2D" parent="." index="4" unique_id=1841158216]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0" unique_id=2144356176]
+position = Vector2(76.5, 0)
+shape = SubResource("RectangleShape2D_vfagg")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

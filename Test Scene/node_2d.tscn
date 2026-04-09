@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cevhbuosrfgg"]
+
+[ext_resource type="PackedScene" uid="uid://7abqs53cfea5" path="res://Lamp/lamp.tscn" id="1_8fsr0"]
+[ext_resource type="PackedScene" uid="uid://dhbr65q7x0ww3" path="res://Player/player.tscn" id="2_bs4aq"]
+
+[node name="Node2D" type="Node2D" unique_id=1643598951]
+
+[node name="Lamp" parent="." unique_id=1620048495 instance=ExtResource("1_8fsr0")]
+position = Vector2(200, 72)
+
+[node name="Player" parent="." unique_id=652778348 instance=ExtResource("2_bs4aq")]
+position = Vector2(184, 184)
+tile_size = 16

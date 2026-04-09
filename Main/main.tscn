@@ -234,13 +234,15 @@ position = Vector2(672, -352)
 rotation = 3.1415927
 
 [node name="Player" parent="." unique_id=652778348 instance=ExtResource("1_yh5la")]
-position = Vector2(352, 480)
+position = Vector2(352, 464)
 tile_size = 32
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1583165716]
 zoom = Vector2(1.275, 1.275)
-limit_left = 100
+limit_left = 50
 limit_right = 750
+limit_bottom = 512
+limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=281260480]
@@ -257,12 +259,14 @@ position = Vector2(0, 759)
 environment = SubResource("Environment_f3gf5")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1665889275]
-visible = false
-color = Color(0.90416837, 0.9483704, 0.97765905, 1)
+color = Color(0.904716, 0.9483896, 0.9761788, 1)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=235524134]
-visible = false
 energy = 0.85
 blend_mode = 1
 
+[node name="PlayerMove" type="Timer" parent="." unique_id=1607920379]
+wait_time = 0.2
+
 [connection signal="player_entered" from="FinishLine" to="." method="_on_finish_line_player_entered"]
+[connection signal="timeout" from="PlayerMove" to="." method="_on_player_move_timeout"]
