@@ -1,0 +1,179 @@
+[gd_scene format=4 uid="uid://c3547exvepv4o"]
+
+[ext_resource type="PackedScene" uid="uid://b3cvqioejsnnf" path="res://Spawner-2/spawner_2.tscn" id="1_dbx5e"]
+[ext_resource type="Texture2D" uid="uid://cfl08lqktlnyq" path="res://Assets/Grass_4.png" id="2_mktjn"]
+[ext_resource type="Texture2D" uid="uid://dnbdd0bb3j3y1" path="res://Assets/Footpath_2.png" id="3_mktjn"]
+[ext_resource type="PackedScene" uid="uid://7abqs53cfea5" path="res://Lamp/lamp.tscn" id="3_qgocb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mktjn"]
+font_size = 25
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dg8qa"]
+texture = ExtResource("2_mktjn")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ij1r0"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_dg8qa")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qgocb"]
+texture = ExtResource("3_mktjn")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_dg8qa"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_qgocb")
+
+[sub_resource type="Environment" id="Environment_mktjn"]
+background_mode = 3
+background_energy_multiplier = 5.49
+glow_enabled = true
+glow_intensity = 1.13
+glow_strength = 0.64
+glow_bloom = 0.15
+glow_blend_mode = 4
+glow_hdr_threshold = 1.32
+
+[node name="Home" type="Node2D" unique_id=1357445358]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1316096850]
+
+[node name="TextureRect" type="ColorRect" parent="UI" unique_id=908226740]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5617426, 0.38750932, 0.5016492, 0.09411765)
+
+[node name="Label" type="Label" parent="UI" unique_id=2087628294]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -123.5
+offset_right = 192.0
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "UNTITLED CROSSY ROAD GAME"
+label_settings = SubResource("LabelSettings_mktjn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Start" type="Button" parent="UI" unique_id=938744610]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -18.0
+offset_right = 96.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.12, 1.08)
+text = "START"
+flat = true
+
+[node name="Exit" type="Button" parent="UI" unique_id=1796849533]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = 39.0
+offset_right = 96.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.12, 1.08)
+text = "EXIT"
+flat = true
+
+[node name="Spawners" type="Node2D" parent="." unique_id=125100890]
+
+[node name="Spawner-2" parent="Spawners" unique_id=1035367092 instance=ExtResource("1_dbx5e")]
+position = Vector2(-40, 288)
+
+[node name="Spawner-3" parent="Spawners" unique_id=1452747629 instance=ExtResource("1_dbx5e")]
+position = Vector2(-40, 96)
+
+[node name="Tiles" type="Node2D" parent="." unique_id=1647635977]
+
+[node name="Grass" type="TileMapLayer" parent="Tiles" unique_id=667427191]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAAAAAYAAAAAAAEAAAABAAYAAAABAAEAAAACAAYAAAAAAAEAAAADAAYAAAABAAEAAAAEAAYAAAAAAAEAAAAFAAYAAAABAAEAAAAGAAYAAAAAAAEAAAAHAAYAAAABAAEAAAAIAAYAAAAAAAEAAAAJAAYAAAABAAEAAAAKAAYAAAAAAAEAAAALAAYAAAABAAEAAAAAAAUAAAAAAAAAAAABAAUAAAABAAAAAAACAAUAAAAAAAAAAAADAAUAAAABAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAABAAAAAAAGAAUAAAAAAAAAAAAHAAUAAAABAAAAAAAIAAUAAAAAAAAAAAAJAAUAAAABAAAAAAAKAAUAAAAAAAAAAAALAAUAAAABAAAAAAAMAAUAAAAAAAAAAAAMAAYAAAAAAAEAAAANAAUAAAABAAAAAAANAAYAAAABAAEAAAAOAAUAAAAAAAAAAAAOAAYAAAAAAAEAAAAPAAUAAAABAAAAAAAPAAYAAAABAAEAAAAQAAUAAAAAAAAAAAAQAAYAAAAAAAEAAAARAAUAAAABAAAAAAARAAYAAAABAAEAAAASAAUAAAAAAAAAAAASAAYAAAAAAAEAAAATAAUAAAABAAAAAAATAAYAAAABAAEAAAAUAAUAAAAAAAAAAAAUAAYAAAAAAAEAAAAVAAUAAAABAAAAAAAVAAYAAAABAAEAAAAWAAUAAAAAAAAAAAAWAAYAAAAAAAEAAAAXAAUAAAABAAAAAAAXAAYAAAABAAEAAAAYAAUAAAAAAAAAAAAYAAYAAAAAAAEAAAAZAAUAAAABAAAAAAAZAAYAAAABAAEAAAA=")
+tile_set = SubResource("TileSet_ij1r0")
+
+[node name="Footpath" type="TileMapLayer" parent="Tiles" unique_id=1818026829]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAASAAAAAAAAAAAAAAATAAAAAAAAAAAAAAAWAAAAAAAAAAAAAAAXAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAACAAsAAAAAAAAAAAADAAsAAAAAAAAAAAAGAAsAAAAAAAAAAAAHAAsAAAAAAAAAAAAKAAsAAAAAAAAAAAALAAsAAAAAAAAAAAAOAAsAAAAAAAAAAAAPAAsAAAAAAAAAAAASAAsAAAAAAAAAAAATAAsAAAAAAAAAAAAWAAsAAAAAAAAAAAAXAAsAAAAAAAAAAAAZAAAAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_dg8qa")
+
+[node name="Lamps" type="Node2D" parent="." unique_id=334139581]
+
+[node name="Lamp" parent="Lamps" unique_id=1620048495 instance=ExtResource("3_qgocb")]
+position = Vector2(32, 32)
+rotation = 3.1415927
+
+[node name="Lamp2" parent="Lamps" unique_id=1337719897 instance=ExtResource("3_qgocb")]
+position = Vector2(160, 32)
+rotation = 3.1415927
+
+[node name="Lamp3" parent="Lamps" unique_id=1938646156 instance=ExtResource("3_qgocb")]
+position = Vector2(288, 32)
+rotation = 3.1415927
+
+[node name="Lamp4" parent="Lamps" unique_id=1719374018 instance=ExtResource("3_qgocb")]
+position = Vector2(416, 32)
+rotation = 3.1415927
+
+[node name="Lamp5" parent="Lamps" unique_id=1817214295 instance=ExtResource("3_qgocb")]
+position = Vector2(544, 32)
+rotation = 3.1415927
+
+[node name="Lamp6" parent="Lamps" unique_id=243874421 instance=ExtResource("3_qgocb")]
+position = Vector2(672, 32)
+rotation = 3.1415927
+
+[node name="Lamp7" parent="Lamps" unique_id=28046868 instance=ExtResource("3_qgocb")]
+position = Vector2(32, 352)
+
+[node name="Lamp8" parent="Lamps" unique_id=1994521330 instance=ExtResource("3_qgocb")]
+position = Vector2(160, 352)
+
+[node name="Lamp9" parent="Lamps" unique_id=1772638824 instance=ExtResource("3_qgocb")]
+position = Vector2(288, 352)
+
+[node name="Lamp10" parent="Lamps" unique_id=858662057 instance=ExtResource("3_qgocb")]
+position = Vector2(416, 352)
+
+[node name="Lamp11" parent="Lamps" unique_id=1196563635 instance=ExtResource("3_qgocb")]
+position = Vector2(544, 352)
+
+[node name="Lamp12" parent="Lamps" unique_id=887641453 instance=ExtResource("3_qgocb")]
+position = Vector2(672, 352)
+
+[node name="Lamp13" parent="Lamps" unique_id=1183052931 instance=ExtResource("3_qgocb")]
+position = Vector2(800, 352)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1995577037]
+environment = SubResource("Environment_mktjn")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1855117493]
+color = Color(0.904716, 0.9483896, 0.9761788, 1)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=852080289]
+energy = 0.85
+blend_mode = 1

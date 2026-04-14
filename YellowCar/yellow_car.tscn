@@ -117,6 +117,7 @@ _data = {
 
 [node name="YellowCar" unique_id=1056331510 instance=ExtResource("1_y5epp")]
 script = ExtResource("2_sd12l")
+speed = 200
 
 [node name="Sprite2D" parent="." index="0" unique_id=1453901874]
 texture = ExtResource("2_tmq38")
@@ -145,6 +146,7 @@ energy = 1.42
 texture = SubResource("GradientTexture2D_sd12l")
 
 [node name="Area2D" type="Area2D" parent="." index="5" unique_id=75743259]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0" unique_id=109420079]
 position = Vector2(76.25, 0)

@@ -45,6 +45,7 @@ color = Color(0.99534124, 0.98117155, 0, 1)
 texture = SubResource("GradientTexture2D_vfagg")
 
 [node name="Area2D" type="Area2D" parent="." index="4" unique_id=1841158216]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0" unique_id=2144356176]
 position = Vector2(76.5, 0)

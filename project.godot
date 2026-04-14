@@ -28,6 +28,10 @@ window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/vsync/vsync_mode=2
 
+[gui]
+
+theme/custom_font="uid://dhrp1dxy0fyg2"
+
 [input]
 
 Up={
@@ -55,6 +59,7 @@ Right={
 
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Lamp"
+2d_physics/layer_3="Car"
 
 [physics]
 

@@ -117,6 +117,7 @@ _data = {
 
 [node name="GreenCar" unique_id=1056331510 instance=ExtResource("1_d3b6d")]
 script = ExtResource("2_s7r3m")
+speed = 150
 
 [node name="Sprite2D" parent="." index="0" unique_id=1453901874]
 texture = ExtResource("2_umuyp")
@@ -138,13 +139,14 @@ color = Color(0.99534124, 0.98117155, 0, 1)
 texture = SubResource("GradientTexture2D_umuyp")
 
 [node name="Backlight" type="PointLight2D" parent="." index="4" unique_id=35210948]
-position = Vector2(-16.5, 0)
+position = Vector2(-15.499998, 0)
 scale = Vector2(0.078124985, 0.15625001)
 color = Color(0.9411765, 0.22745098, 0.28627452, 1)
 energy = 1.42
 texture = SubResource("GradientTexture2D_s7r3m")
 
 [node name="Area2D" type="Area2D" parent="." index="5" unique_id=696598718]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0" unique_id=770661008]
 position = Vector2(77, 0)
