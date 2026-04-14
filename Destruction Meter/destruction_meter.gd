@@ -8,5 +8,5 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	@warning_ignore("integer_division")
-	damagebar.value = (Globals.damage_score / 1) * 25
+	damagebar.value = (Globals.damage_score / 3) * 25
 	Globals.high_score_track = damagebar.value

@@ -1,12 +1,11 @@
 [gd_scene format=4 uid="uid://c3547exvepv4o"]
 
 [ext_resource type="PackedScene" uid="uid://b3cvqioejsnnf" path="res://Spawner-2/spawner_2.tscn" id="1_dbx5e"]
+[ext_resource type="Script" uid="uid://5n0q3kjkcbc6" path="res://Home/home.gd" id="1_qgocb"]
+[ext_resource type="Texture2D" uid="uid://daxpggoakwl76" path="res://Assets/Invincible Crossing.png" id="2_dg8qa"]
 [ext_resource type="Texture2D" uid="uid://cfl08lqktlnyq" path="res://Assets/Grass_4.png" id="2_mktjn"]
 [ext_resource type="Texture2D" uid="uid://dnbdd0bb3j3y1" path="res://Assets/Footpath_2.png" id="3_mktjn"]
 [ext_resource type="PackedScene" uid="uid://7abqs53cfea5" path="res://Lamp/lamp.tscn" id="3_qgocb"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_mktjn"]
-font_size = 25
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dg8qa"]
 texture = ExtResource("2_mktjn")
@@ -40,6 +39,7 @@ glow_blend_mode = 4
 glow_hdr_threshold = 1.32
 
 [node name="Home" type="Node2D" unique_id=1357445358]
+script = ExtResource("1_qgocb")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1316096850]
 
@@ -52,36 +52,20 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.5617426, 0.38750932, 0.5016492, 0.09411765)
 
-[node name="Label" type="Label" parent="UI" unique_id=2087628294]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -192.0
-offset_top = -123.5
-offset_right = 192.0
-offset_bottom = -62.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "UNTITLED CROSSY ROAD GAME"
-label_settings = SubResource("LabelSettings_mktjn")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Start" type="Button" parent="UI" unique_id=938744610]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -96.0
-offset_top = -18.0
-offset_right = 96.0
-offset_bottom = 18.0
+offset_left = -116.0
+offset_top = -1.4999847
+offset_right = 76.0
+offset_bottom = 39.500015
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.12, 1.08)
+theme_override_font_sizes/font_size = 25
 text = "START"
 flat = true
 
@@ -91,15 +75,31 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -96.0
-offset_top = 39.0
-offset_right = 96.0
-offset_bottom = 75.0
+offset_left = -116.0
+offset_top = 55.5
+offset_right = 76.0
+offset_bottom = 96.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.12, 1.08)
+theme_override_font_sizes/font_size = 25
 text = "EXIT"
 flat = true
+
+[node name="TextureRect2" type="TextureRect" parent="UI" unique_id=1145756862]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.0
+offset_top = -241.0
+offset_right = 147.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_dg8qa")
+expand_mode = 1
 
 [node name="Spawners" type="Node2D" parent="." unique_id=125100890]
 
@@ -177,3 +177,6 @@ color = Color(0.904716, 0.9483896, 0.9761788, 1)
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=852080289]
 energy = 0.85
 blend_mode = 1
+
+[connection signal="pressed" from="UI/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="UI/Exit" to="." method="_on_exit_pressed"]

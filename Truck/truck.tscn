@@ -24,6 +24,8 @@ size = Vector2(111, 26)
 
 [node name="Truck" unique_id=1056331510 instance=ExtResource("1_vfagg")]
 script = ExtResource("2_clrb3")
+speed = 160
+points = 2
 
 [node name="Sprite2D" parent="." index="0" unique_id=1453901874]
 texture = ExtResource("2_y4sod")

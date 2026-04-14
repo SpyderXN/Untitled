@@ -8,7 +8,7 @@ script = ExtResource("1_7w2g3")
 car = ExtResource("2_lissh")
 
 [node name="Spawntimer" type="Timer" parent="." unique_id=93442707]
-wait_time = 2.0
+wait_time = 1.6999999999999997
 
 [node name="Spawns" type="Node2D" parent="." unique_id=1578843556]
 
