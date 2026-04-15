@@ -3,7 +3,29 @@
 [ext_resource type="Script" uid="uid://bjx30wdsnv8v8" path="res://Destruction Meter/destruction_meter.gd" id="1_1pkwo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mj4rh"]
-font_size = 50
+font_size = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1pkwo"]
+bg_color = Color(0.8509804, 0.45490196, 0.34901962, 0.6627451)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6qh4s"]
+bg_color = Color(0.340775, 0.6529772, 0.72115237, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [node name="Destruction Meter" type="Control" unique_id=2117679596]
 layout_mode = 3
@@ -11,17 +33,22 @@ anchors_preset = 0
 script = ExtResource("1_1pkwo")
 
 [node name="Label" type="Label" parent="." unique_id=1660233978]
-visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "0"
+layout_mode = 1
+offset_left = 491.0
+offset_top = 7.0
+offset_right = 691.0
+offset_bottom = 72.0
+text = "esc to exit"
 label_settings = SubResource("LabelSettings_mj4rh")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Damagebar" type="ProgressBar" parent="." unique_id=1952149782]
 layout_mode = 0
-offset_right = 249.0
-offset_bottom = 27.0
+offset_left = 17.0
+offset_top = 22.0
+offset_right = 266.0
+offset_bottom = 49.0
+theme_override_styles/background = SubResource("StyleBoxFlat_1pkwo")
+theme_override_styles/fill = SubResource("StyleBoxFlat_6qh4s")
 rounded = true

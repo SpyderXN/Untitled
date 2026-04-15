@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://rpvv1fyaiist" path="res://Assets/Grass_3.png" id="8_0jx5h"]
 [ext_resource type="Texture2D" uid="uid://cfl08lqktlnyq" path="res://Assets/Grass_4.png" id="9_uhr2j"]
 [ext_resource type="PackedScene" uid="uid://7abqs53cfea5" path="res://Lamp/lamp.tscn" id="12_f3gf5"]
+[ext_resource type="AudioStream" uid="uid://crlqpxc1hsoxy" path="res://Audio/Music - 2.mp3" id="15_uhr2j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l5bfp"]
 texture = ExtResource("6_0jx5h")
@@ -267,6 +268,12 @@ blend_mode = 1
 
 [node name="PlayerMove" type="Timer" parent="." unique_id=1607920379]
 wait_time = 0.2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=897749081]
+stream = ExtResource("15_uhr2j")
+volume_db = -9.013
+autoplay = true
+parameters/looping = true
 
 [connection signal="player_entered" from="FinishLine" to="." method="_on_finish_line_player_entered"]
 [connection signal="timeout" from="PlayerMove" to="." method="_on_player_move_timeout"]

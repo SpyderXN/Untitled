@@ -19,6 +19,11 @@ func _process(_delta: float) -> void:
 	if player.global_position.x < 90 or player.global_position.x > 750 or player.global_position.y > 512:
 		game_over_panel()
 	
+	#Return to home screen after pressing the esc 
+	if Input.is_action_just_pressed("Exit"):
+		TransitionLayer.change_scene_to("uid://c3547exvepv4o")
+	
+	
 	#if player.moving == false:
 		#player_move.start()
 

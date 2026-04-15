@@ -6,6 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://cfl08lqktlnyq" path="res://Assets/Grass_4.png" id="2_mktjn"]
 [ext_resource type="Texture2D" uid="uid://dnbdd0bb3j3y1" path="res://Assets/Footpath_2.png" id="3_mktjn"]
 [ext_resource type="PackedScene" uid="uid://7abqs53cfea5" path="res://Lamp/lamp.tscn" id="3_qgocb"]
+[ext_resource type="AudioStream" uid="uid://bkqpyn517m5s4" path="res://Audio/Music - 1.mp3" id="7_ij1r0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dg8qa"]
+font_size = 20
+font_color = Color(0.78064287, 0.3607576, 0.36215228, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dg8qa"]
 texture = ExtResource("2_mktjn")
@@ -52,6 +57,21 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.5617426, 0.38750932, 0.5016492, 0.09411765)
 
+[node name="TextureRect2" type="TextureRect" parent="UI" unique_id=1145756862]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.0
+offset_top = -241.0
+offset_right = 147.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_dg8qa")
+expand_mode = 1
+
 [node name="Start" type="Button" parent="UI" unique_id=938744610]
 anchors_preset = 8
 anchor_left = 0.5
@@ -65,6 +85,7 @@ offset_bottom = 39.500015
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.12, 1.08)
+theme_override_colors/font_color = Color(0.8901961, 0.8352941, 0.105882354, 1)
 theme_override_font_sizes/font_size = 25
 text = "START"
 flat = true
@@ -82,24 +103,22 @@ offset_bottom = 96.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.12, 1.08)
+theme_override_colors/font_color = Color(0.4, 0.6039216, 0.98039216, 1)
 theme_override_font_sizes/font_size = 25
 text = "EXIT"
 flat = true
 
-[node name="TextureRect2" type="TextureRect" parent="UI" unique_id=1145756862]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -148.0
-offset_top = -241.0
-offset_right = 147.0
-offset_bottom = 61.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_dg8qa")
-expand_mode = 1
+[node name="Version" type="Label" parent="UI" unique_id=952663782]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -40.0
+offset_right = 72.0
+offset_bottom = -19.0
+grow_vertical = 0
+text = "v: 0.1.1"
+label_settings = SubResource("LabelSettings_dg8qa")
 
 [node name="Spawners" type="Node2D" parent="." unique_id=125100890]
 
@@ -118,7 +137,7 @@ tile_set = SubResource("TileSet_ij1r0")
 
 [node name="Footpath" type="TileMapLayer" parent="Tiles" unique_id=1818026829]
 texture_filter = 1
-tile_map_data = PackedByteArray("AAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAASAAAAAAAAAAAAAAATAAAAAAAAAAAAAAAWAAAAAAAAAAAAAAAXAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAACAAsAAAAAAAAAAAADAAsAAAAAAAAAAAAGAAsAAAAAAAAAAAAHAAsAAAAAAAAAAAAKAAsAAAAAAAAAAAALAAsAAAAAAAAAAAAOAAsAAAAAAAAAAAAPAAsAAAAAAAAAAAASAAsAAAAAAAAAAAATAAsAAAAAAAAAAAAWAAsAAAAAAAAAAAAXAAsAAAAAAAAAAAAZAAAAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAASAAAAAAAAAAAAAAATAAAAAAAAAAAAAAAWAAAAAAAAAAAAAAAXAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAACAAsAAAAAAAAAAAADAAsAAAAAAAAAAAAGAAsAAAAAAAAAAAAHAAsAAAAAAAAAAAAKAAsAAAAAAAAAAAALAAsAAAAAAAAAAAAOAAsAAAAAAAAAAAAPAAsAAAAAAAAAAAASAAsAAAAAAAAAAAATAAsAAAAAAAAAAAAWAAsAAAAAAAAAAAAXAAsAAAAAAAAAAAAZAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAABAAwAAAAAAAAAAAACAAwAAAAAAAAAAAADAAwAAAAAAAAAAAAEAAwAAAAAAAAAAAAFAAwAAAAAAAAAAAAGAAwAAAAAAAAAAAAHAAwAAAAAAAAAAAAIAAwAAAAAAAAAAAAJAAwAAAAAAAAAAAAKAAwAAAAAAAAAAAALAAwAAAAAAAAAAAAMAAwAAAAAAAAAAAANAAwAAAAAAAAAAAAOAAwAAAAAAAAAAAAPAAwAAAAAAAAAAAAQAAwAAAAAAAAAAAARAAwAAAAAAAAAAAASAAwAAAAAAAAAAAATAAwAAAAAAAAAAAAUAAwAAAAAAAAAAAAVAAwAAAAAAAAAAAAWAAwAAAAAAAAAAAAXAAwAAAAAAAAAAAAYAAwAAAAAAAAAAAAZAAwAAAAAAAAAAAAaAAwAAAAAAAAAAAAaAAsAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_dg8qa")
 
 [node name="Lamps" type="Node2D" parent="." unique_id=334139581]
@@ -177,6 +196,12 @@ color = Color(0.904716, 0.9483896, 0.9761788, 1)
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=852080289]
 energy = 0.85
 blend_mode = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1190122531]
+stream = ExtResource("7_ij1r0")
+volume_db = -6.24
+autoplay = true
+mix_target = 1
 
 [connection signal="pressed" from="UI/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="UI/Exit" to="." method="_on_exit_pressed"]

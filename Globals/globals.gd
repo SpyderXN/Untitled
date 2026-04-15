@@ -9,4 +9,7 @@ func damage_counter(value):
 	damage_points = damage_score + value
 	damage_score = damage_points
 	print(damage_score)
+
+func reset():
+	damage_score = 0
 	
